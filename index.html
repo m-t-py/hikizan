@@ -1,1 +1,116 @@
-<!doctype html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ひきざんチャレンジ</title><link rel="stylesheet" href="style.css"></head><body><main class="app"><h1>🌸 ひきざんチャレンジ 🌸</h1><p id="progress" aria-live="polite"></p><div id="stars" aria-label="せいかいの数"></div><section class="card"><div id="question" class="math"></div><form id="answerForm"><label for="answer">こたえをいれてね</label><input id="answer" type="number" min="0" max="9" inputmode="numeric" pattern="[0-9]*" required autocomplete="off"><button id="submitButton" type="submit">こたえる！</button></form><div id="feedback" aria-live="polite"></div><button id="nextButton" type="button" hidden>つぎのもんだい →</button></section><div id="summary" hidden></div><button id="restartButton" type="button">🔄 もういちど</button></main><script src="script.js" defer></script></body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>さんすうチャレンジ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="container">
+
+  <h1>🌸 さんすうチャレンジ 🌸</h1>
+
+  <!-- ホーム画面 -->
+  <section id="homeScreen">
+
+    <h2>きょうは なにを れんしゅうする？</h2>
+
+    <div class="menu">
+
+      <button class="menuButton" onclick="startGame('add1')">
+        🌷 たしざん ①
+        <small>くりあがり なし</small>
+      </button>
+
+      <button class="menuButton" onclick="startGame('add2')">
+        🌻 たしざん ②
+        <small>くりあがり あり</small>
+      </button>
+
+      <button class="menuButton" onclick="startGame('sub1')">
+        🍀 ひきざん ①
+        <small>くりさがり なし</small>
+      </button>
+
+      <button class="menuButton" onclick="startGame('sub2')">
+        ⭐ ひきざん ②
+        <small>くりさがり あり</small>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- 問題画面 -->
+  <section id="gameScreen" class="hidden">
+
+    <h2 id="gameTitle"></h2>
+
+    <p id="progress"></p>
+
+    <div id="stars"></div>
+
+    <div class="questionCard">
+
+      <div id="questionText"></div>
+
+      <p>こたえを いれてね</p>
+
+      <input
+        type="number"
+        id="answerInput"
+        inputmode="numeric"
+        min="0"
+        max="18"
+      >
+
+      <button id="answerButton" onclick="checkAnswer()">
+        こたえる！
+      </button>
+
+      <div id="feedback"></div>
+
+      <button
+        id="nextButton"
+        class="hidden"
+        onclick="nextQuestion()"
+      >
+        つぎのもんだい ➡
+      </button>
+
+    </div>
+
+    <button class="backButton" onclick="goHome()">
+      🏠 ホームにもどる
+    </button>
+
+  </section>
+
+
+  <!-- 結果画面 -->
+  <section id="resultScreen" class="hidden">
+
+    <h2>🎉 おつかれさま！</h2>
+
+    <div id="finalScore"></div>
+
+    <button onclick="restartGame()">
+      🔄 もういちど
+    </button>
+
+    <button onclick="goHome()">
+      🏠 ホームにもどる
+    </button>
+
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

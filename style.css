@@ -1,1 +1,148 @@
-*{box-sizing:border-box}body{margin:0;background:#fff8e9;color:#403b38;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif}.app{max-width:540px;margin:auto;padding:26px 16px 55px;text-align:center}h1{font-size:clamp(23px,6vw,32px);color:#ee8749}#progress{font-size:20px;font-weight:bold}#stars{min-height:36px;letter-spacing:4px;font-size:22px}.card{background:white;border-radius:22px;padding:28px 18px;margin:18px 0;box-shadow:0 5px 18px #a7794820}.math{font-size:clamp(44px,12vw,68px);font-weight:bold;margin:18px 0 26px}label{display:block;font-size:18px;margin-bottom:12px}input{display:block;margin:0 auto 20px;width:120px;height:70px;border:3px solid #f6bd87;border-radius:12px;text-align:center;font-size:38px}button{display:block;width:min(100%,300px);margin:14px auto;border:0;border-radius:14px;padding:16px;font-size:20px;font-weight:bold;color:white;background:#ff9b46;cursor:pointer}#nextButton{background:#58a7e8}#restartButton{background:#8794a7}button:disabled{opacity:.5}#feedback{line-height:1.85;text-align:left;font-size:19px}#feedback h2{text-align:center;color:#e7823d}#feedback .step{background:#f3f8ff;border-radius:12px;padding:12px;margin:9px 0}#summary{font-size:23px;font-weight:bold;line-height:1.8} [hidden]{display:none!important}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  background: #fff8e8;
+  color: #444;
+}
+
+.container {
+  width: 92%;
+  max-width: 650px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(24px, 6vw, 36px);
+  color: #f28b50;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 30px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* メニュー */
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.menuButton {
+  min-height: 140px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  font-size: 23px;
+  font-weight: bold;
+  color: #444;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.menuButton small {
+  display: block;
+  font-size: 15px;
+  margin-top: 12px;
+  color: #777;
+}
+
+.menuButton:hover {
+  background: #fff0d8;
+}
+
+/* 問題 */
+
+.questionCard {
+  background: white;
+  padding: 35px 20px;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+#questionText {
+  font-size: clamp(45px, 10vw, 70px);
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+#progress {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#stars {
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+#answerInput {
+  display: block;
+  width: 130px;
+  height: 75px;
+  margin: 20px auto;
+  border: 3px solid #ddd;
+  border-radius: 12px;
+  font-size: 36px;
+  text-align: center;
+}
+
+button {
+  padding: 15px 25px;
+  margin: 12px 5px;
+  border: none;
+  border-radius: 12px;
+  background: #ff9f43;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#feedback {
+  margin-top: 25px;
+  font-size: 20px;
+  line-height: 2;
+}
+
+#nextButton {
+  background: #54a0ff;
+}
+
+.backButton {
+  background: #95a5a6;
+}
+
+#finalScore {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 40px 0;
+}
+
+/* スマートフォン */
+
+@media (max-width: 500px) {
+
+  .menu {
+    grid-template-columns: 1fr;
+  }
+
+  .menuButton {
+    min-height: 100px;
+  }
+
+  .questionCard {
+    padding: 25px 12px;
+  }
+
+}
